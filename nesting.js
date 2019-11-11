@@ -79,17 +79,34 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
+// function removeDuplicates(){
+//   for(i = 0; i < workplaceAccidents.length; i++) {
+//     for(j = i + 1; j < workplaceAccidents.length; j++) {
+//       if(workplaceAccidents[i] == workplaceAccidents[j]) {
+//         workplaceAccidents.splice(j, 1)
+//         j--
+//       }
+//     }
+//   }
+//   return workrplaceAccidents;
+// }
+
+//Alternate Solution:  it loops going right to left and then left to right, starting at different ends so they are at the exact same index at the same time
+
 function removeDuplicates(){
-  for(i = 0; i < workplaceAccidents.length; i++) {
-    for(j = i + 1; j < workplaceAccidents.length; j++) {
-      if(workplaceAccidents[i] == workplaceAccidents[j]) {
+  for(let i =0; i < workplaceAccidents.length; i++){
+    for(let j= workplaceAccidents.length - 1; j >= 0; j--){
+      if(workplaceAccidents[i] === workplaceAccidents[j] && i !== j){
         workplaceAccidents.splice(j, 1)
-        j--
       }
+      //the i !== j basically means that if the loops cross at the same time it wouldnt read a number at that meeting point as 'thw same' and remove it when it isnt an actual duplicate.
+   
+      //the 1 signifies that if their is a duplicate, which is j (j is the index) and then the '1' tells it to remove just one...
     }
-  }
-  return workrplaceAccidents;
+  }return workplaceAccidents
+
 }
+
 
 
 
@@ -109,17 +126,19 @@ var cat = {
     }
   ]
 }
-// Do not edit the code above.
+// Do not edit the code above
+
+
+
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend=cat.catFriends[1].name;
+
 
 /*
   Fluffy has two friends, Grumpy and Lazy Bones. 
     1. Assign the value of Grumpy's 2nd activity to the grumpyActivity variable below.
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
-
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
 
 
 
@@ -159,8 +178,13 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
-
+function recordCleaner(){
+  for(let i = 0; i < myCar.accidents.length; i++){
+    if(myCar.accidents[i].atFaultForAccident === true) {
+      myCar.accidents[i].atFaultForAccident = false
+    }
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -178,6 +202,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
+function looper() {
+  for(let i = 0; i <numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++){
+      if(numsArr[i][j] % 2 === 1) {
+        numArr[i][j] = 'odd'
+      } else {
+        numbsArr[i][j] = 'even'
+    }
+    
+
+    }
+  }
+  return numsArr;
 
 
+looper()
+}

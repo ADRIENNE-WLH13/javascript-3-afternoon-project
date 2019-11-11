@@ -21,8 +21,21 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 //Code Here
-let evenNumbers = mixedNumbers.filter(el => el %2 === 0) // = mixedNumbers.filter(/* Provide Your Callback Here */)
+// let evenNumbers = mixedNumbers.filter(el => el %2 === 0)  
 
+//alternate solution
+let evenNumbers = mixedNumbers.filter(function(el, i, arr){
+  return el % 2 === 0
+})
+
+// function even(arr){
+//   let newArr = [];
+//   for(let i =0; i < arr.length; i++){
+//     if(arr[i] % 2 === 0) {
+//       newArr.push(arr[i])
+//     }
+//   }return newArr
+// }
 
 
 ////////// PROBLEM 2 //////////
@@ -63,10 +76,15 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation = populations.reduce((total, pop) => total + pop); //  = populations.reduce(/* Provide Your Callback Here */)
+// let totalPopulation = populations.reduce((total, pop) => total + pop); //  = populations.reduce(/* Provide Your Callback Here */)
 
+//alternate solutions
 
+// let totalPopulation = populations.reduce((total,el)=> total += el, 0)
 
+let totalPopulation = populations.reduce(function(acc, el){
+  return acc += el
+}, 0)
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -88,7 +106,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
   Use the filter method to return only the monsters that have a CP of over 200.
 */
 
-//Code Here
+
 let myStrongest = monstersInYourPocket.filter(monster => monster.CP > 200); // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
