@@ -187,6 +187,13 @@ function recordCleaner(){
 }
 
 
+// const recordCleaner = () => {
+//   myCar.accidents.forEach( arr => {
+//     arr.atFaultForAccident = false
+//   })
+// }
+
+
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
@@ -219,3 +226,15 @@ function looper() {
 
 looper()
 }
+
+
+// const looper = () => {
+//   numsArr.forEach( value => {
+//     value.forEach( (num, j, arr2) => {
+//       num % 2 === 0 
+//         ?  arr2[j] = 'even' 
+//         :  arr2[j] = 'odd'
+//       })
+//   })
+//   return numsArr
+// }

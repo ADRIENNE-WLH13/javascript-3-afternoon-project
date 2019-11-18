@@ -43,6 +43,8 @@ function addNums(num1, num2, num3) {
 addNums(...numbers);
 const result = [...numbers + addNums];
 
+// let result = addNums(...numbers);
+
 
 ////////// PROBLEM 4 //////////
 
@@ -53,3 +55,5 @@ let arr2 = ['bear', 'tiger', 'liger'];
 
 // arr1.concat(arr2)
 let combinedArrays = arr1.concat(arr2);
+
+// let combinedArrays = [].concat(...arr1, ...arr2)

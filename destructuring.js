@@ -126,10 +126,12 @@ function largeNumbers( {first, second, third} ) {
   Find the longest array and return that array.
 */
 
-// function numberGroups( {a, b, c}) {
-//   for(i = 0; i > a.length; i++) {
-
-//   }
-// }
-// create two for loops to  compare with if/statements as shown above to return the longest arrays using the .length to iterate through each value of arrays.//#endregion
-
+const numberGroups = ({a, b, c}) => {
+  if(a.length > b.length && a.length > c.length ) {
+    return a
+ } else if (b.length > a.length && b.length > c.length) {
+   return b
+ } else {
+   return c
+ }
+}
